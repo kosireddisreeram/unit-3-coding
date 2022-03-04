@@ -25,4 +25,6 @@ const ecommerece={
     current_unit:3,
     nickname:'pikachu'
 }
+// call apply bind - temporary
+// object.create- permenant
 
