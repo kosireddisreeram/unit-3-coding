@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function friends(name,occupation,city){
+    this.name=name;
+    this.occupation=occupation;
+    this.city=city;
+}
+let object_1=new friends("Amar","singer","Goa");
+let object_2=new friends("Akbar","Chef","Mumbai");
+let object_3=new friends("Anthony","Magician","Kashmir");
+// console.log(object_1,object_2,object_3)
+function newskill(learn){
+this.borrowedskill=learn;
+}
+newskill.call(object_2,'singer');
+console.log(object_2);
+console.log(`${object_2.name}'s occupation is ${object_2.occupation} borrowed new skill ${object_2.borrowedskill} from ${object_1.name}`)
+newskill.call(object_1,'chef');
+console.log(object_1);
+console.log(`${object_1.name}'s occupation is ${object_1.occupation} borrowed new skill ${object_1.borrowedskill} from ${object_2.name}`)
+newskill.call(object_3,'chef');
+console.log(object_3);
+console.log(`${object_3.name}'s occupation is ${object_3.occupation} borrowed new skill ${object_3.borrowedskill} from ${object_2.name}`)
+</script>
+<!-- 
+    Object { name: "Akbar", occupation: "Chef", city: "Mumbai", borrowedskill: "singer" }
+Akbar's occupation is Chef borrowed new skill singer from Amar problem2.html:65:9
+Object { name: "Amar", occupation: "singer", city: "Goa", borrowedskill: "chef" }
+Amar's occupation is singer borrowed new skill chef from Akbar problem2.html:68:9
+Object { name: "Anthony", occupation: "Magician", city: "Kashmir", borrowedskill: "chef" }
+Anthony's occupation is Magician borrowed new skill chef from Akbar
+ -->
