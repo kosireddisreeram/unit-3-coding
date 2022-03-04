@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="a()">generate</button>
+    <p id="display"></p>
+</body>
+</html>
+<script>
+    function a(){
+  function getrandom(){
+      return Math.floor(Math.random() *(7-1))+1;
+  }
+  var store=getrandom()
+  localStorage.setItem("nums",JSON.stringify(store));
+  var store= JSON.parse(localStorage.getItem("nums"))||[];
+  document.getElementById("display").innerText=store;
+  var div=document.getElementById("display");
+   if(store=== 1){
+       div.style.color="yellow";
+   }
+   else if(store===6){
+       div.style.color="green";
+   }
+   else{
+    div.style.color="red";
+
+   }
+}
+
+
+</script>
